@@ -18,7 +18,11 @@ class App extends Component {
     const { dispatch, selectedSubreddit } = this.props
     dispatch(fetchPostsIfNeeded(selectedSubreddit))
   }
-
+  /**
+   * 
+   * @store.dispatch()是 View 发出 Action 的唯一方法。
+       store.dispatch接受一个 Action 对象作为参数，将它发送出去
+   */
   componentWillReceiveProps(nextProps) {
     if (nextProps.selectedSubreddit !== this.props.selectedSubreddit) {
       const { dispatch, selectedSubreddit } = nextProps
